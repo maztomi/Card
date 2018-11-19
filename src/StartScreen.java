@@ -1,51 +1,56 @@
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Toolkit;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import java.awt.Image;
-
-
-
-public class StartScreen extends JPanel {
-	Toolkit kit=Toolkit.getDefaultToolkit();
-	Dimension screenSize=kit.getScreenSize();
-	
-	BufferedImage img;
-	
-	JButton button =new JButton("Start");
-	this.add(button);
-	
-	public void paint(Graphics g) {
-		g.drawImage(img, 0, 0, null);
-	}
+public class StartScreen extends JFrame {
+	//	public Screen startP = null;
+	//	public CardScreen gameP = null;
+	//
+	//	public void changeRoom(String panel) {
+	//		if(panel.equals("startP")) {
+	//			
+	//		}
+	//	}
 	public StartScreen() {
-		try {
-			img=ImageIO.read(new File("C:\\农肺快 墨靛.jpg"));
-		}catch(IOException e) {	}
-	}
-	public Dimension getPreferredSize() {
+		JPanel startScreen = new JPanel();
+		startScreen.setBackground(Color.ORANGE);
+		startScreen.setLayout(null);
 
-		return new Dimension(700,700);
+		CardScreen gameScreen = new CardScreen();
+		gameScreen.setBackground(Color.red);
 
+		add(startScreen);
+
+		JButton start = new JButton("start");
+		start.setBounds(200, 200, 70, 40);
+		start.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				getContentPane().removeAll();
+				getContentPane().add(gameScreen);
+				revalidate();
+				repaint();
+			}
+		});
+
+		startScreen.add(start);
+
+		setSize(400, 400);
+		setVisible(true);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
+
 	public static void main(String[] args) {
-		
-		JFrame f = new JFrame("Start Screen");
-
-		Image i=kit.getImage("C:\\农肺快.jpg");
-		f.setIconImage(i);
-		
-		f.add(new StartScreen());
-		f.pack();
-		f.setVisible(true);
-		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		StartScreen f = new StartScreen();
+		//		f.startP = new Screen();
+		//		f.gameP = new CardScreen();
+		//		
+		//		f.add(f.startP);
 	}
 }
