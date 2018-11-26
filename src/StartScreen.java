@@ -1,24 +1,27 @@
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import java.awt.Image;
+
+
 public class StartScreen extends JFrame {
-	//	public Screen startP = null;
-	//	public CardScreen gameP = null;
-	//
-	//	public void changeRoom(String panel) {
-	//		if(panel.equals("startP")) {
-	//			
-	//		}
-	//	}
+		public Screen startP = null;
+		public CardScreen gameP = null;
+	
+		public void changeRoom(String panel) {
+			if(panel.equals("startP")) {
+				
+			}
+		}
+
 	public StartScreen() {
 		JPanel startScreen = new JPanel();
-		startScreen.setBackground(Color.ORANGE);
-		startScreen.setLayout(null);
 
 		CardScreen gameScreen = new CardScreen();
 		gameScreen.setBackground(Color.red);
@@ -48,9 +51,9 @@ public class StartScreen extends JFrame {
 
 	public static void main(String[] args) {
 		StartScreen f = new StartScreen();
-		//		f.startP = new Screen();
-		//		f.gameP = new CardScreen();
-		//		
-		//		f.add(f.startP);
+		f.add(new Screen());
+		f.pack();
+		f.setVisible(true);
+		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 }
