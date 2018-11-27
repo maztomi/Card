@@ -7,7 +7,9 @@ import java.util.TimerTask;
 
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
-
+/*
+ * 게임화면
+ */
 public class CardScreen extends JPanel{
 	BufferedImage img1;
 	BufferedImage img2;
