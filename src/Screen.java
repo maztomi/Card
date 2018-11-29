@@ -29,7 +29,7 @@ public class Screen extends JPanel{
 		}catch (IOException e) {}
 		
 		startButton = new JButton("START");
-		//startButton.setBounds(200, 200, 70, 40);
+//		startButton.setBounds(200, 200, 70, 40);
 		startButton.addActionListener(new ActionListener() {
 
 			@Override
@@ -61,7 +61,7 @@ public class Screen extends JPanel{
 	}
 	public Dimension getPreferredSize() {
 		if(img==null) {
-			return new Dimension(400,400);
+			return new Dimension(800,800);
 		}
 		else {
 			return new Dimension(img.getWidth(null), img.getHeight(null));

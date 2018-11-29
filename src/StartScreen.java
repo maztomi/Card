@@ -1,5 +1,6 @@
 import java.awt.Color;
-import java.awt.FlowLayout;
+import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
@@ -22,7 +23,7 @@ public class StartScreen extends JFrame {
 		}
 	}
 
-	ImageIcon i=new ImageIcon("C:\\Users\\6405-29\\git\\Card\\image\\image\\크로우.png");
+	ImageIcon i=new ImageIcon("image\\image\\크로우.png");
 	Image im=i.getImage();
 
 	class Background extends JPanel{
@@ -38,14 +39,15 @@ public class StartScreen extends JFrame {
 
 		Background bg=new Background();
 		CardScreen gameScreen = new CardScreen();
-		gameScreen.setBackground(Color.red);
+		// gameScreen.setBackground(Color.red);
 
 		JButton start = new JButton("start");
-		start.setBounds(165, 260, 70, 40);
+		start.setBounds(380, 250, 150, 350);
+		start.setFont(new Font("Dialog", Font.BOLD, 50));
 
-		//start.setBorderPainted(false);     // 버튼 테두리 제거
-		//start.setContentAreaFilled(false); // 버튼 채우기 없앰
-		//start.setFocusPainted(false);      // 버튼 마우스 포커스 제거
+		start.setBorderPainted(false);     // 버튼 테두리 제거
+		start.setContentAreaFilled(false); // 버튼 채우기 없앰
+		start.setFocusPainted(false);      // 버튼 마우스 포커스 제거
 
 		bg.setLayout(null);
 
@@ -58,7 +60,7 @@ public class StartScreen extends JFrame {
 				revalidate();
 				repaint();
 
-				gameScreen.setBounds(0,0,400,400);
+				gameScreen.setBounds(0,0,750,750);
 				getContentPane().add(gameScreen);
 
 
@@ -67,17 +69,20 @@ public class StartScreen extends JFrame {
 
 		this.add(bg);
 		bg.add(start);
-		bg.setBounds(0, 0, 396, 396);
-		setSize(412, 430);
+		bg.setBounds(0, 0, 900, 900);
+		setSize(912, 912);
 
 		this.add(startScreen);
 
-		setVisible(true);
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setVisible(true);
 	}
 
 	public static void main(String[] args) {
 		StartScreen f = new StartScreen();
+//		f.setResizable(false);
+//		f.setPreferredSize(new Dimension(800,800));
 		//f.add(new Screen());
 	}
 }
