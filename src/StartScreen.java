@@ -1,5 +1,3 @@
-import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -10,6 +8,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
 /*
  * 연동화면
  */
@@ -23,7 +22,7 @@ public class StartScreen extends JFrame {
 		}
 	}
 
-	ImageIcon i=new ImageIcon("image\\image\\크로우.png");
+	ImageIcon i=new ImageIcon("image\\크로우.png");
 	Image im=i.getImage();
 
 	class Background extends JPanel{
@@ -42,7 +41,7 @@ public class StartScreen extends JFrame {
 		// gameScreen.setBackground(Color.red);
 
 		JButton start = new JButton("start");
-		start.setBounds(380, 250, 150, 350);
+		start.setBounds(380, 260, 150, 350);
 		start.setFont(new Font("Dialog", Font.BOLD, 50));
 
 		start.setBorderPainted(false);     // 버튼 테두리 제거
