@@ -12,6 +12,10 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+/*
+ * 임시 게임화면 
+ */
+//재업로드
 
 public class GameScreen extends JFrame {
 	JLabel info = new JLabel("정보");
@@ -67,14 +71,12 @@ public class GameScreen extends JFrame {
 		buttonPanel.add(reset);
 		add(buttonPanel, "South");
 
-
-
 		cardPanel.setLayout(new GridLayout(4, 4));
-		cardback = new ImageIcon("image\\image\\크로우 뒷면.png");
+		cardback = new ImageIcon("image\\크로우뒷면.png");
 
 		card = new ArrayList<>();
 		for (int i = 0; i < 8; i++) {
-			img[i] = new ImageIcon("image\\image\\card" + i + ".png");
+			img[i] = new ImageIcon("image\\card" + i + ".png");
 			card.add(i);
 			card.add(i);
 		}
@@ -92,6 +94,29 @@ public class GameScreen extends JFrame {
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
+
+		for(int i=0; i <16; i++) {
+			b[i].addActionListener(new ActionListener(){
+
+				public void actionPerformed(ActionEvent e) {
+					for(int j=0; j <16; j++)
+						b[j].setIcon(img[card.get(j)]);
+					
+					timer= new Timer();
+					task=new TimerTask() {
+
+						@Override
+						public void run() {
+							// TODO Auto-generated method stub
+							for (int i = 0; i < 16; i++) {
+								b[i].setIcon(cardback);
+							}
+						}
+					};
+					timer.schedule(task, 1000);
+				}
+			});
+		}
 	}
 
 	public static void main(String[] args) {

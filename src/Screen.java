@@ -1,4 +1,3 @@
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
@@ -14,6 +13,7 @@ import javax.swing.JPanel;
 /*
  * 시작화면
  */
+//재업로드
 public class Screen extends JPanel{
 	JButton startButton;
 
@@ -25,7 +25,7 @@ public class Screen extends JPanel{
 	
 	public Screen() {
 		try {
-			img=ImageIO.read(new File("image\\image\\크로우.png"));
+			img=ImageIO.read(new File("image\\크로우.png"));
 		}catch (IOException e) {}
 		
 		startButton = new JButton("START");
